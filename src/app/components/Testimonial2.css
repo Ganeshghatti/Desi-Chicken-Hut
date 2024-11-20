@@ -1,0 +1,93 @@
+.test2 {
+    position: relative;
+    top: 250.19px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../assets/test-hero.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.caption {
+    position: absolute;
+    display: flex;
+    background: transparent;
+    top: 61.5px;
+}
+
+.test-cao {
+    color: white;
+    font-size: 3rem;
+    font-family: 'Foregen Rough One', sans-serif;
+    text-align: center;
+    background: transparent;
+    z-index: 10;
+}
+
+.shop {
+    font-family: 'Sensation-Regular', sans-serif;
+    cursor: pointer;
+    border: #FFCD45 3.0px solid;
+    font-style: normal;
+    font-weight: 400;
+    color: #D30000;
+    width: 144px;
+    height: 38px;
+    font-size: 14px;
+    background: #ffffff;
+    border-radius: 100px;
+    line-height: 19px;
+    letter-spacing: -3%;
+    margin-top: 100px;
+    position: absolute;
+    /* Keep the absolute positioning for alignment */
+    top: 50%;
+    /* Center vertically */
+    left: 50%;
+    /* Center horizontally */
+    transform: translate(-50%, -50%);
+    /* Adjust for exact centering */
+}
+
+.sphere_1,
+.sphere_2,
+.sphere_3,
+.sphere_4 {
+    background: transparent;
+    position: relative;
+}
+
+.sphere_1 img {
+    position: absolute;
+    top: -8pc;
+    /* left: 100.45px; */
+    right: 200.57px;
+    background: transparent;
+}
+
+.sphere_2 img {
+    position: absolute;
+    top: -2pc;
+    /* left: 100.45px; */
+    right: 955.57px;
+    background: transparent;
+}
+
+.sphere_3 img {
+    position: absolute;
+    top: -0.3pc;
+    /* left: 100.45px; */
+    right: 855.57px;
+    background: transparent;
+}
+
+.sphere_4 img {
+    position: absolute;
+    top: -2pc;
+    /* left: 100.45px; */
+    right: 155.57px;
+    background: transparent;
+}

@@ -1,0 +1,247 @@
+/* Header.css */
+
+/* Main container that holds everything */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 6%;
+    margin-top: 15px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    /* Locations */
+    font-family: 'Sensation-Regular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    /* identical to box height */
+    letter-spacing: 0.05px;
+    color: #000000;
+    flex: none;
+    order: 3;
+    flex-grow: 0;
+}
+
+.nav-links li {
+    font-family: 'Sensation-Regular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    cursor: pointer;
+    padding: 0px 20px;
+}
+
+.nav-links li a {
+    transition: color 0.3s ease 0s;
+}
+
+.nav-links li a:hover {
+    color: #0088a9;
+}
+
+.visitButton {
+    font-family: 'Sensation-Regular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    padding: 8px 16px;
+    gap: 8px;
+    color: #F7F7F7;
+    width: 99.95px;
+    height: 40px;
+    left: 942.49px;
+    top: 22.59px;
+    font-size: 16px;
+    background: #B60204;
+    border-radius: 100px;
+    border: #FFCD45 3px solid;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    top: 0px;
+    overflow: hidden;
+    /* margin-bottom: 80.5px; */
+}
+
+.hero-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(353.29deg, rgba(241, 0, 0, 0) 13.68%, rgba(255, 255, 255, 0.05) 53.87%), url('../assets/HeroBg copy.png');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* .hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 28px;
+    width: 576px;
+    height: 107px;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+} */
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    text-align: center;
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hero-text .heading1 {
+    position: relative;
+    top: -75px;
+    font-family: 'Foregen Rough One', sans-serif;
+    font-size: 52px;
+    white-space: nowrap;
+    background: transparent;
+    /* width: 576px; */
+    /* height: 59px; */
+    font-style: normal;
+    font-weight: 600;
+    line-height: 113.03%;
+    text-align: center;
+    letter-spacing: -0.0005em;
+    color: #1E1E1E;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    margin-bottom: 28px;
+}
+
+.hero-text .heading1 .next {
+    color: #D30000;
+    background: transparent;
+}
+
+.hero-text .heading2 {
+    background: transparent;
+    width: 576px;
+    position: relative;
+    top: -60px;
+    height: 20px;
+    font-family: 'Sensation-Regular', sans-serif;
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 18px;
+    line-height: 113.03%;
+    text-align: center;
+    letter-spacing: -0.005em;
+    color: #1E1E1E;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+
+}
+
+.exploreview {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+}
+
+.exploreview button {
+    width: 10pc;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.005em;
+    color: #D30000;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    font-family: 'Foregen Rough One', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 19px;
+    position: relative;
+    top: 55px;
+    padding: 15px 30px;
+    background-color: #fff;
+    /* Customize button color */
+    color: #D30000;
+    border: #D30000 3.5px solid;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.values {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+    margin-top: 78px;
+    background: transparent;
+    /* margin-bottom: 78px; */
+}
+
+.value {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: transparent;
+}
+
+/* Circular container for the images */
+.ellipse {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 2.5px solid #B60204;
+    margin-bottom: 31px;
+}
+
+/* Make sure the images inside the circle are responsive */
+.ellipse img {
+    width: 30px;
+    /* Adjust this size based on your image size */
+    height: auto;
+    background: transparent;
+    object-fit: cover;
+    /* Ensure the images are contained properly */
+}
+
+/* Caption styling */
+.value span {
+
+    background: transparent;
+    font-size: 18px;
+    color: #333;
+    font-weight: 500;
+    white-space: nowrap;
+}

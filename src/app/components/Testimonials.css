@@ -1,0 +1,120 @@
+.main-container-testimonials {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    /* margin-top: 78px; */
+    height: 650px;
+    top: 150px;
+    background: #B12415;
+}
+
+.testicon1 {
+    position: absolute;
+    padding-top: 8px;
+    background: transparent;
+    padding-left: 700px;
+}
+
+.testicon1 img {
+    background: transparent;
+}
+
+.test-title {
+    padding-top: 35px;
+    position: relative;
+    font-family: 'Foregen Rough One', sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    background: transparent;
+}
+
+.test-captions {
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    background: transparent;
+    top: 125.40px;
+}
+
+.test-main-cap {
+    position: relative;
+    top: 70px;
+    display: block;
+    white-space: pre-wrap;
+    font-family: 'Sansation-Regular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: #FFCD45;
+    font-size: 18px;
+    line-height: 1.3;
+    letter-spacing: -2%;
+    background: transparent;
+}
+
+.author {
+    margin-top: 32px;
+    position: relative;
+    top: 100px;
+    font-family: 'Sansation-Regular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;
+    background: transparent;
+}
+
+.leftarrow {
+    position: absolute;
+    top: 125.40px;
+    right: 860.5px;
+    transform: translateY(-50%);
+    background: transparent;
+}
+
+.leftarrow img {
+    background: transparent;
+}
+
+.rightarrow {
+    background: transparent;
+    position: absolute;
+    top: 125.40px;
+    left: 860px;
+    transform: translateY(-50%);
+}
+
+.rightarrow img {
+    background: transparent;
+}
+
+.chickens {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+.chick {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background: transparent;
+    height: 100px;
+}
+
+.chick img {
+    width: 100%;
+    height: auto;
+    display: block;
+    background: transparent;
+}

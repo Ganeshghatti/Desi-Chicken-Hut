@@ -1,0 +1,133 @@
+.main-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    background: transparent;
+    background-image: url('../assets/footerimg.svg');
+    /* Background image applied to the whole footer */
+    background-size: cover;
+    /* Ensures the image covers the area */
+    background-position: top center;
+    /* Adjust this for top-centered image */
+    background-repeat: no-repeat;
+    position: relative;
+    top: 300px;
+    width: 100%;
+    /* Make the footer take full width */
+    min-height: 500px;
+    /* Set a minimum height for the footer */
+}
+
+.main-footer .left-content {
+    width: 50%;
+    background: transparent;
+    padding: 40px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main-footer .left-content .footer-caption {
+    font-size: 18px;
+    margin-top: 20px;
+    background: transparent;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #fff;
+}
+
+.main-footer .right-content {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    justify-content: space-between;
+    padding-left: 200px;
+    padding-right: 20px;
+    margin-left: auto;
+
+}
+
+.right-content .address-cap,
+.right-content .phone-cap,
+.right-content .operation-cap {
+    font-family: 'Foregen Rough One', sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    color: #fff;
+    background: transparent;
+    margin-bottom: 10px;
+    margin-top: 100px;
+}
+
+.right-content .address-content,
+.right-content .phone-content,
+.right-content .operation-content {
+    display: flex;
+    align-items: center;
+    background: transparent;
+}
+
+.address,
+.phone,
+.operation {
+    background: transparent;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.right-content .address-data,
+.right-content .phone-data,
+.right-content .operation-data {
+    background: transparent;
+    margin-left: 10px;
+}
+
+.right-content .address-content img,
+.right-content .phone-content img,
+.right-content .operation-content img {
+    background: transparent;
+    width: 20px;
+    height: 20px;
+}
+
+.right-content .phone-data,
+.right-content .operation-data {
+    background: transparent;
+    font-family: 'Sensation-Regular', sans-serif;
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 16px;
+    color: #fff;
+}
+
+.right-content .operation-content p {
+    background: transparent;
+    font-family: 'Sensation-Regular', sans-serif;
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 16px;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .main-footer {
+        flex-direction: column;
+        align-items: center;
+        min-height: 350px;
+        /* Reduce the min-height on mobile if needed */
+    }
+
+    .main-footer .left-content {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .main-footer .right-content {
+        width: 100%;
+        margin-top: 20px;
+        padding-right: 0;
+        /* Remove right padding for mobile */
+    }
+}

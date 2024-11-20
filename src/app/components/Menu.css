@@ -1,0 +1,140 @@
+.main-menu-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    gap: 52px;
+    width: 988px;
+    height: 519px;
+    margin: auto;
+    padding-top: 350px;
+    margin-top: 65px;
+    /* Automatically centers horizontally and vertically */
+    top: 65px;
+    /* Optional, ensures no extra offset if combined with margin */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+}
+
+.menu-caps {
+    font-family: 'Foregen Rough One', sans-serif;
+    background: transparent;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    text-align: start;
+}
+
+.menu-cards {
+    background: transparent;
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+}
+
+.menu-cap {
+    font-family: 'Foregen Rough One', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    /* Align items vertically in the center */
+    justify-content: space-between;
+    /* Push items to the edges */
+    width: 100%;
+    /* Make it span the entire card width */
+}
+
+.menu-cap .cap {
+    font-family: 'Foregen Rough One', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.hr-line {
+    font-family: 'Foregen Rough One', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    width: 090px;
+    /* Makes the line flexible to fill the space */
+    height: 2px;
+    /* Set the thickness of the line */
+    background-color: #000;
+    /* Line color, adjust as needed */
+    margin-right: -60px;
+    /* Add spacing between the line and rate */
+}
+
+.rate {
+    font-family: 'Foregen Rough One', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    text-align: right;
+    /* Aligns the text to the right */
+    background: transparent;
+}
+
+
+.menu-card {
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Ensures items inside cards are centered */
+    gap: 16px;
+}
+
+
+.menu-subcap br {
+    display: block;
+    /* Ensures the line break after Biryani */
+    content: '';
+    /* Creates a visible line break */
+}
+
+.menu-subcap {
+    font-family: 'Sensation-Regular', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    font-style: normal;
+    /* Set font size for the description */
+    line-height: 1.5;
+    /* Adjust line height for better spacing */
+    color: #000000;
+    /* Set default text color */
+    display: block;
+    width: 100%;
+    /* Ensure the subcap text takes full width */
+}
+
+.readmore {
+    font-family: 'Sensation-Regular', sans-serif;
+    font-size: 10.5px;
+    /* Smaller font size for 'Read More' */
+    color: #B60204;
+    /* Red color for 'Read More' */
+    text-align: right;
+    /* Align 'Read More' to the right */
+    display: inline-block;
+    /* Keeps 'Read More' on the same line if possible */
+    margin-top: 8px;
+    /* Adds some spacing between the description and 'Read More' */
+}
+
+/* Adjust the flexbox layout in menu-captions */
+.menu-captions {
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Align to start of column */
+    gap: 8px;
+    justify-content: flex-start;
+    /* Ensures elements are stacked properly */
+}
