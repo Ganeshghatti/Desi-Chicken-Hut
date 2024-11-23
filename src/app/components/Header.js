@@ -1,86 +1,66 @@
-// Header.js
 import React from "react";
-import Image from "next/image";
-import Sign from "../assets/logo.svg";
-import "./Header.css";
-import Hero from "../assets/HeroBg copy.png";
-import value1 from "../assets/value1.svg";
-import value2 from "../assets/value2.svg";
-import value3 from "../assets/value3.svg";
-import value4 from "../assets/value4.svg";
+import Image from "next/image"; // Import Image from Next.js
+import HeroBg from "../assets/HeroBg.png"; // Correctly import the image
 
 const Header = () => {
   return (
     <div className="main-container">
-      <div className="header">
-        <Image src={Sign} alt="Logo" width={70} height={70} />
-        <nav className="navbar">
-          <ul className="nav-links">
-            <li>
-              <a href="#" />
-              Home
-            </li>
-            <li>
-              <a href="#" />
-              Products
-            </li>
-            <li>
-              <a href="#" />
-              About
-            </li>
-            <li>
-              <a href="#" />
-              Locations
-            </li>
-          </ul>
-        </nav>
-        <button className="visitButton">Visit</button>
-      </div>
-      {/* navend */}
-      <div className="hero">
-        <div className="hero-img">
-          {/* <Image src={Hero} alt='Hero-section' /> */}
+      <div className="hero relative w-full h-[620px] overflow-hidden">
+        {/* Hero Background Image with Next.js Image Component */}
+        <div className="hero-img absolute top-0 left-0 w-full h-full bg-cover bg-center bg-no-repeat">
+          <Image
+            src={HeroBg} // The imported image
+            alt="Hero section background"
+            layout="fill" // Make it cover the full container
+            objectFit="cover" // Make sure it covers the entire space
+            objectPosition="center" // Center the image
+          />
         </div>
-        <div className="hero-text">
-          <span className="heading1">
-            DISCOVER A <span className="next">NEXT</span> LEVEL OF TASTE
+
+        {/* Hero Text and Button Container */}
+        <div className="hero-text-and-button absolute top-[140px] left-1/2 transform -translate-x-1/2 z-10 text-center bg-transparent px-4 sm:px-8">
+          {/* Heading 1 */}
+          <span
+            className="text-[#1E1E1E] font-normal block mb-[28px] text-[52px] sm:text-[52px] xs:text-[32px]" // Set font size for small screens and above
+            style={{
+              fontFamily: "'Foregen Rough One', sans-serif",
+              lineHeight: "113.03%",
+              letterSpacing: "-0.02em",
+              width: "100%", // Adjust width to be responsive
+              height: "auto", // Allow height to adjust
+              background: "transparent",
+            }}
+          >
+            DISCOVER A{" "}
+            <span className="text-[#D30000] bg-transparent">NEXT</span> LEVEL OF
+            TASTE
           </span>
-          <br />
-          <br />
-          <span className="heading2">
+
+          {/* Heading 2 */}
+          <span
+            className="text-[#1E1E1E] font-normal block mb-[28px] text-[18px] sm:text-[18px] xs:text-[14px]" // Set font size for small screens and above
+            style={{
+              fontFamily: "'Sensation-Regular', sans-serif",
+              lineHeight: "113.03%",
+              letterSpacing: "-0.02em",
+              width: "100%", // Make it responsive
+              height: "auto", // Allow height to adjust
+              background: "transparent",
+            }}
+          >
             The Heart of Authentic, Flavorful, and Ethical Poultry
           </span>
-        </div>
-        <div className="exploreview">
-          <button>EXPLORE MENU</button>
-        </div>
-      </div>
-      {/* heroends */}
 
-      <div className="values">
-        <div className="value">
-          <span className="ellipse">
-            <Image src={value1} alt="value1" />
-          </span>
-          <span>High Quality</span>
-        </div>
-        <div className="value">
-          <span className="ellipse">
-            <Image src={value2} alt="value2" />
-          </span>
-          <span>Swift Delivery</span>
-        </div>
-        <div className="value">
-          <span className="ellipse">
-            <Image src={value3} alt="value3" />
-          </span>
-          <span>Organic Value</span>
-        </div>
-        <div className="value">
-          <span className="ellipse">
-            <Image src={value4} alt="value4" />
-          </span>
-          <span>Farm Based</span>
+          {/* Explore Button */}
+          <button
+            className="px-[30px] py-[15px] bg-white border-[3.5px] border-[#D30000] text-[#D30000] text-[18px] sm:text-[18px] xs:text-[14px] rounded-[30px] transition-all duration-300 ease-in-out hover:bg-[#D30000] hover:text-white mt-[28px] w-full sm:w-[200px] mx-auto"
+            style={{
+              fontFamily: "'Foregen Rough One', sans-serif",
+              height: "60px",
+            }}
+          >
+            EXPLORE MENU
+          </button>
         </div>
       </div>
     </div>
