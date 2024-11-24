@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="relative flex justify-between bg-[#323232] items-center px-[5%] h-[90px]">
+    <nav className="relative flex justify-between bg-[#323232] items-center w-full px-[6%] h-[90px] ">
       {/* Logo (hidden on small screens) */}
       <Image
         src={Sign}
@@ -40,7 +40,7 @@ const Navbar = () => {
         ></div>
       )}
       {menuOpen && (
-        <div className="fixed top-0 w-[70vh] left-0 h-screen bg-[#323232] z-50 p-6">
+        <div className="fixed top-0 w-[70vw] left-0 h-screen bg-[#323232] z-50 p-6">
           {/* Close Button */}
 
           {/* Logo (appears in the mobile menu) */}
@@ -85,14 +85,14 @@ const Navbar = () => {
       </nav>
 
       {/* Visit Button (Always on the Right side of Screen) */}
-      <button className="font-[Sensation-Regular] font-normal py-[8px] px-[16px] text-white w-[99.95px] h-[40px] text-[16px] bg-[#B60204] rounded-full border-[3px] border-[#FFCD45] cursor-pointer mt-[20px] md:mt-0 hidden md:block">
-        Visit
+      <button className="font-[Sensation-Regular] font-normal py-[8px] px-[16px] text-white  text-[16px] bg-[#B60204] rounded-full border-[3px] border-[#FFCD45] cursor-pointer mt-[20px] md:mt-0 hidden md:block">
+        Get Started
       </button>
 
       {/* Mobile Visit Button (Positioned on the Right in Mobile Menu) */}
       <div className="absolute bottom-6 right-6 md:hidden">
-        <button className="font-[Sensation-Regular] font-normal py-[8px] px-[16px] text-white w-[99.95px] h-[40px] text-[16px] bg-[#B60204] rounded-full border-[3px] border-[#FFCD45] cursor-pointer">
-          Visit
+        <button className="font-[Sensation-Regular] font-normal py-[8px] px-[16px] text-white  text-[16px] bg-[#B60204] rounded-full border-[3px] border-[#FFCD45] cursor-pointer">
+          Get Started
         </button>
       </div>
     </nav>

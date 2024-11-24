@@ -7,44 +7,43 @@ import value3 from "../assets/value3.svg";
 import value4 from "../assets/value4.svg";
 
 const Values = () => {
+  const data = [
+    {
+      id: 1,
+      image: value1,
+      title: "High Quality",
+    },
+    {
+      id: 2,
+      image: value2,
+      title: "Swift Delivery",
+    },
+    {
+      id: 3,
+      image: value3,
+      title: "Organic Value",
+    },
+    {
+      id: 4,
+      image: value4,
+      title: "Farm Based",
+    },
+  ];
+
   return (
-    <div className="flex flex-wrap justify-center items-center gap-[120px] mt-[78.5px] mb-[78.5px]">
-      <div className="flex flex-col items-center text-center">
-        <span className="flex justify-center items-center w-[72px] h-[72px] rounded-full bg-white border-[2.5px] border-[#B60204] mb-[31px]">
-          <Image src={value1} alt="value1" width={30} height={30} />
-        </span>
-        <span className="text-[18px] font-medium text-[#333333]">
-          High Quality
-        </span>
-      </div>
-
-      <div className="flex flex-col items-center text-center">
-        <span className="flex justify-center items-center w-[72px] h-[72px] rounded-full bg-white border-[2.5px] border-[#B60204] mb-[31px]">
-          <Image src={value2} alt="value2" width={30} height={30} />
-        </span>
-        <span className="text-[18px] font-medium text-[#333333]">
-          Swift Delivery
-        </span>
-      </div>
-
-      <div className="flex flex-col items-center text-center">
-        <span className="flex justify-center items-center w-[72px] h-[72px] rounded-full bg-white border-[2.5px] border-[#B60204] mb-[31px]">
-          <Image src={value3} alt="value3" width={30} height={30} />
-        </span>
-        <span className="text-[18px] font-medium text-[#333333]">
-          Organic Value
-        </span>
-      </div>
-
-      <div className="flex flex-col items-center text-center">
-        <span className="flex justify-center items-center w-[72px] h-[72px] rounded-full bg-white border-[2.5px] border-[#B60204] mb-[31px]">
-          <Image src={value4} alt="value4" width={30} height={30} />
-        </span>
-        <span className="text-[18px] font-medium text-[#333333]">
-          Farm Based
-        </span>
-      </div>
-    </div>
+    <section className="flex flex-wrap justify-between gap-y-8 md:gap-y-0 px-[18%]  items-center my-[78.5px]">
+      {data.map((item, index) => (
+        <div
+          key={index}
+          className="flex flex-col w-2/5 md:w-1/5 items-center text-center"
+        >
+          <span className="flex justify-center items-center w-[65px] md:w-[72px] h-[65px] md:h-[72px] rounded-full hover:bg-[#B60204] hover:text-white transition-all duration-300 ease-in-out bg-white border-[2.5px] border-[#B60204] mb-[31px]">
+            <Image src={item.image} alt={item.title} width={35} height={35} />
+          </span>
+          <p className="text-[18px] font-medium text-[#333333]">{item.title}</p>
+        </div>
+      ))}
+    </section>
   );
 };
 
