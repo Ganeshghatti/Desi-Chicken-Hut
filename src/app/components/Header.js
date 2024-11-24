@@ -47,6 +47,9 @@ const Header = () => {
         className="flex text-xl items-center gap-2 z-10 md:text-3xl px-[30px] py-[15px] bg-white border-[3.5px] border-[#D30000] text-[#D30000]  rounded-[30px] transition-all duration-300 ease-in-out hover:bg-[#D30000] hover:text-white mt-[28px] "
         style={{
           fontFamily: "'Foregen Rough One', sans-serif",
+          fontSize: "18px",
+          width: "fit-content",
+          height: "50px",
         }}
       >
         <svg

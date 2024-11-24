@@ -20,7 +20,8 @@ const Footer = () => {
           Hut, your go-to non-veg paradise.
           <br />
           <br />
-          Dive into a world of irresistible dishes and authentic tastes today!
+          Dive into a world of irresistible dishes and authentic
+          <br /> tastes today!
         </p>
       </div>
       <div className="right-content">

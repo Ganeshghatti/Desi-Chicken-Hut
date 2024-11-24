@@ -56,7 +56,7 @@ const OrderSection = () => {
               <div className="text-[16px] leading-[113.03%] tracking-[-0.02em] text-[#1E1E1E] mt-[20px] text-start">
                 {item.description}
               </div>
-              <button className="relative float-left  font-normal border-[#D30000] border-[3px] text-[#D30000] w-[144px] h-[38px] mt-[22.59px] text-[14px] bg-white rounded-[100px] leading-[19px] tracking-[-3%] cursor-pointer">
+              <button className="relative float-left font-normal border-[#D30000] border-[3px] text-[#D30000] w-[144px] h-[38px] mt-[22.59px] text-[14px] bg-white rounded-[100px] leading-[19px] tracking-[-3%] cursor-pointer hover:bg-[#D30000] hover:text-white transition-colors duration-300">
                 Order Now
               </button>
             </div>
