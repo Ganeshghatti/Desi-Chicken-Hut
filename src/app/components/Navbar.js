@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Sign from "../assets/logo.svg"; // Path to your logo
 import { GiHamburgerMenu, GiCancel } from "react-icons/gi"; // Import Hamburger and Cancel icons
+import Link from "next/link"; // Add this import at the top
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false); // State to toggle the menu visibility
@@ -12,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="relative flex justify-between items-center py-[1px] mt-[15px] px-[6%] h-[84px]">
+    <nav className="relative flex justify-between bg-[#323232] items-center px-[5%] h-[90px]">
       {/* Logo (hidden on small screens) */}
       <Image
         src={Sign}
@@ -25,40 +26,41 @@ const Navbar = () => {
       {/* Hamburger Menu for Mobile (visible on small screens) */}
       <button
         onClick={handleMenuToggle}
-        className="md:hidden text-2xl text-black absolute left-4"
+        className="md:hidden text-2xl text-white absolute left-4"
       >
         <GiHamburgerMenu />
       </button>
 
       {/* Mobile Menu */}
+
       {menuOpen && (
-        <div className="fixed top-0 left-0 w-full h-screen bg-white z-50 p-6">
+        <div
+          className="bg-black z-30 w-screen h-screen opacity-50 fixed top-0 left-0 "
+          onClick={handleMenuToggle}
+        ></div>
+      )}
+      {menuOpen && (
+        <div className="fixed top-0 w-[70vh] left-0 h-screen bg-[#323232] z-50 p-6">
           {/* Close Button */}
-          <button
-            onClick={handleMenuToggle}
-            className="text-3xl text-black absolute top-4 right-4"
-          >
-            <GiCancel />
-          </button>
 
           {/* Logo (appears in the mobile menu) */}
-          <div className="flex justify-center mb-8">
+          {/* <div className="flex justify-center mb-8">
             <Image src={Sign} alt="Logo" width={70} height={70} />
-          </div>
+          </div> */}
 
           {/* Navbar Links */}
-          <ul className="list-none flex flex-col font-[Sensation-Regular] text-[16px] text-black gap-[38px]">
+          <ul className="list-none flex flex-col font-[Sensation-Regular] p-0 m-0 items-center w-full h-full justify-center text-[16px] text-white gap-y-[38px]">
             <li className="cursor-pointer">
-              <a href="#">Home</a>
+              <Link href="/">Home</Link>
             </li>
             <li className="cursor-pointer">
-              <a href="#">Products</a>
+              <Link href="/products">Products</Link>
             </li>
             <li className="cursor-pointer">
-              <a href="#">About</a>
+              <Link href="/about">About</Link>
             </li>
             <li className="cursor-pointer">
-              <a href="#">Locations</a>
+              <Link href="/locations">Locations</Link>
             </li>
           </ul>
         </div>
@@ -66,18 +68,18 @@ const Navbar = () => {
 
       {/* Navbar Links for Larger Screens */}
       <nav className={`navbar ${menuOpen ? "block" : "hidden"} md:block`}>
-        <ul className="list-none flex font-[Sensation-Regular] text-[16px] text-black gap-[38px] md:space-x-[20px] md:flex-row flex-col md:items-center">
-          <li className="cursor-pointer">
-            <a href="#">Home</a>
+        <ul className="list-none flex font-[Sensation-Regular] text-[16px] text-white  gap-[38px] md:space-x-[20px] md:flex-row flex-col md:items-center">
+          <li className="cursor-pointer hover:text-[#D30000]">
+            <Link href="/">Home</Link>
           </li>
-          <li className="cursor-pointer">
-            <a href="#">Products</a>
+          <li className="cursor-pointer hover:text-[#D30000]">
+            <Link href="/products">Products</Link>
           </li>
-          <li className="cursor-pointer">
-            <a href="#">About</a>
+          <li className="cursor-pointer hover:text-[#D30000]">
+            <Link href="/about">About</Link>
           </li>
-          <li className="cursor-pointer">
-            <a href="#">Locations</a>
+          <li className="cursor-pointer hover:text-[#D30000]">
+            <Link href="/locations">Locations</Link>
           </li>
         </ul>
       </nav>
@@ -93,7 +95,7 @@ const Navbar = () => {
           Visit
         </button>
       </div>
-    </div>
+    </nav>
   );
 };
 

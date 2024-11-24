@@ -17,7 +17,6 @@ export default function Home() {
       <OrderSection />
       <Whychoose />
       <Testimonials />
-      <div className="whitespace"></div>
       <Testimonial2 />
       <Menu />
       <Footer />
