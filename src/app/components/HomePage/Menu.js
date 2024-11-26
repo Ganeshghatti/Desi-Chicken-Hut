@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import classic from "../assets/classic.svg";
-import family from "../assets/family.svg";
+import classic from "../../assets/HomePage/classic.svg";
+import family from "../../assets/HomePage/family.svg";
 
 const Menu = () => {
   const data = [

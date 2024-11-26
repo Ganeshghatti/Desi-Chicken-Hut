@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import testbg from "../assets/test-hero.png";
-import white from "../assets/whitespherebig.svg";
-import yellowsmall from "../assets/yellowspheresmall.svg";
-import whitesmall from "../assets/whitespheresmall.svg";
-import yellow from "../assets/yellowspherebig.svg";
+import testbg from "../../assets/HomePage/test-hero.png";
+import white from "../../assets/HomePage/whitespherebig.svg";
+import yellowsmall from "../../assets/HomePage/yellowspheresmall.svg";
+import whitesmall from "../../assets/HomePage/whitespheresmall.svg";
+import yellow from "../../assets/HomePage/yellowspherebig.svg";
 
 const Testimonial2 = () => {
   return (

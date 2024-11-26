@@ -2,14 +2,14 @@
 // Values.js
 import React, { useState } from "react";
 import Image from "next/image";
-import value1 from "../assets/value1.svg";
-import value2 from "../assets/value2.svg";
-import value3 from "../assets/value3.svg";
-import value4 from "../assets/value4.svg";
-import value1white from "../assets/value1white.svg";
-import value2white from "../assets/value2white.svg";
-import value3white from "../assets/value3white.svg";
-import value4white from "../assets/value4white.svg";
+import value1 from "../../assets/HomePage/value1.svg";
+import value2 from "../../assets/HomePage/value2.svg";
+import value3 from "../../assets/HomePage/value3.svg";
+import value4 from "../../assets/HomePage/value4.svg";
+import value1white from "../../assets/HomePage/value1white.svg";
+import value2white from "../../assets/HomePage/value2white.svg";
+import value3white from "../../assets/HomePage/value3white.svg";
+import value4white from "../../assets/HomePage/value4white.svg";
 
 const Values = () => {
   const [hoveredId, setHoveredId] = useState(null);
@@ -61,7 +61,9 @@ const Values = () => {
               className="w-8 h-8"
             />
           </span>
-          <p className="text-[18px] font-medium text-[#333333]">{item.title}</p>
+          <p className="text-[18px] font-medium text-[#333333] whitespace-pre-line md:whitespace-normal">
+            {item.title.split(" ").join("\n")}
+          </p>
         </div>
       ))}
     </section>

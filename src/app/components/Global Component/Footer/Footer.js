@@ -1,16 +1,15 @@
 import React from "react";
-import footerimg from "../assets/footerimg.svg";
+import footerimg from "../../../assets/HomePage/footerimg.svg";
 import Image from "next/image";
-import logo from "../assets/logo.svg";
-import location from "../assets/location.svg";
-import operation from "../assets/operation.svg";
-import phone from "../assets/phone.svg";
+import logo from "../../../assets/HomePage/logo.svg";
+import location from "../../../assets/HomePage/location.svg";
+import operation from "../../../assets/HomePage/operation.svg";
+import phone from "../../../assets/HomePage/phone.svg";
 import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div className="main-footer">
-      {/* <Image src={footerimg} alt="" /> */}
+    <footer className="main-footer">
       <div className="left-content">
         <Image src={logo} alt="" />
         <p className="footer-caption">
@@ -70,7 +69,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import eggs from "../assets/eggs.png";
-import chicken from "../assets/chicken.png";
-import petmeat from "../assets/petmeat.png";
+import eggs from "../../assets/HomePage/eggs.png";
+import chicken from "../../assets/HomePage/chicken.png";
+import petmeat from "../../assets/HomePage/petmeat.png";
 
 const OrderSection = () => {
   const data = [

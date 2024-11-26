@@ -1,12 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import testicon1 from "../assets/testicon1.svg";
-import leftarrow from "../assets/leftarrow.png";
-import rightarrow from "../assets/rightarrow.png";
-import chick1 from "../assets/chick1.svg";
-import chick2 from "../assets/chick2.svg";
-import chick3 from "../assets/chick3.svg";
+import testicon1 from "../../assets/HomePage/testicon1.svg";
+import leftarrow from "../../assets/HomePage/leftarrow.png";
+import rightarrow from "../../assets/HomePage/rightarrow.png";
+import chick1 from "../../assets/HomePage/chick1.svg";
+import chick2 from "../../assets/HomePage/chick2.svg";
+import chick3 from "../../assets/HomePage/chick3.svg";
 
 const Testimonials = () => {
   // Demo reviews data with line breaks

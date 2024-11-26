@@ -1,12 +1,12 @@
 import React from "react";
-import whyicon1 from "../assets/whyicon1.svg";
-import whyicon2 from "../assets/whyicon2.svg";
-import Tree from "../assets/Tree.svg";
-import Thumb from "../assets/Thumb.svg";
-import Sustain from "../assets/Sustain.svg";
-import Farm from "../assets/Farm.svg";
-import verticle from "../assets/verticle.svg";
-import hori from "../assets/hori.svg";
+import whyicon1 from "../../assets/HomePage/whyicon1.svg";
+import whyicon2 from "../../assets/HomePage/whyicon2.svg";
+import Tree from "../../assets/HomePage/Tree.svg";
+import Thumb from "../../assets/HomePage/Thumb.svg";
+import Sustain from "../../assets/HomePage/Sustain.svg";
+import Farm from "../../assets/HomePage/Farm.svg";
+import verticle from "../../assets/HomePage/verticle.svg";
+import hori from "../../assets/HomePage/hori.svg";
 import Image from "next/image";
 
 const Whychoose = () => {
@@ -41,6 +41,7 @@ const Whychoose = () => {
     },
   ];
 
+  const newLocal = "absolute flex justify-center my-[84px] hidden md:flex";
   return (
     <section className="flex flex-col items-center justify-start relative h-auto md:h-[675px] mt-[78px] p-0 mx-[6%] md:mx-[18%]">
       <div className="mb-0 relative">
@@ -78,7 +79,7 @@ const Whychoose = () => {
         ))}
 
         {/* Vertical and Horizontal Lines - Only visible on desktop */}
-        <div className="absolute flex justify-center my-[84px] hidden md:flex">
+        <div className={newLocal}>
           <Image src={verticle} alt="vertical line icon" />
         </div>
         <div className="absolute flex justify-center my-[370.5px] hidden md:flex">
