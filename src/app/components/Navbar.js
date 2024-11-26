@@ -367,15 +367,19 @@ const Navbar = () => {
       </nav>
 
       {/* Visit Button (Always on the Right side of Screen) */}
-      <button className="font-[Sensation-Regular] font-normal py-[8px] px-[16px] text-white  text-[16px] bg-[#B60204] rounded-full border-[3px] border-[#FFCD45] cursor-pointer mt-[20px] md:mt-0 hidden md:block">
-        Get Started
-      </button>
+      <Link href={"/auth/login"}>
+        <button className="font-[Sensation-Regular] font-normal py-[8px] px-[16px] text-white  text-[16px] bg-[#B60204] rounded-full border-[3px] border-[#FFCD45] cursor-pointer mt-[20px] md:mt-0 hidden md:block">
+          Get Started
+        </button>
+      </Link>
 
       {/* Mobile Visit Button (Positioned on the Right in Mobile Menu) */}
       <div className="absolute bottom-6 right-6 md:hidden">
-        <button className="font-[Sensation-Regular] font-normal py-[8px] px-[16px] text-white  text-[16px] bg-[#B60204] rounded-full border-[3px] border-[#FFCD45] cursor-pointer">
-          Get Started
-        </button>
+        <Link href={"/auth/login"}>
+          <button className="font-[Sensation-Regular] font-normal py-[8px] px-[16px] text-white  text-[16px] bg-[#B60204] rounded-full border-[3px] border-[#FFCD45] cursor-pointer">
+            Get Started
+          </button>
+        </Link>
       </div>
     </nav>
   );

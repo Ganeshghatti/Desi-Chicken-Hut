@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import bcrypt from "bcryptjs"; // Make sure to add this import
 
 const UserSchema = new mongoose.Schema({
   email: {
@@ -26,6 +27,30 @@ const UserSchema = new mongoose.Schema({
     enum: ["user", "admin"],
     default: "user",
   },
+}, { 
+  timestamps: true // Optional: adds createdAt and updatedAt fields
 });
 
-export default mongoose.models.User || mongoose.model('User', UserSchema);
+UserSchema.pre("save", async function (next) {
+  // Only hash the password if it has been modified (or is new)
+  if (!this.isModified("password")) return next();
+
+  try {
+    const salt = await bcrypt.genSalt(10);
+    this.password = await bcrypt.hash(this.password, salt);
+    next();
+  } catch (error) {
+    next(error);
+  }
+});
+
+UserSchema.methods.comparePassword = async function (enteredPassword) {
+  try {
+    return await bcrypt.compare(enteredPassword, this.password);
+  } catch (error) {
+    console.error("Password comparison error:", error);
+    return false;
+  }
+};
+
+export default mongoose.models.User || mongoose.model("User", UserSchema);
