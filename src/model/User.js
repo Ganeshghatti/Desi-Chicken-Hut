@@ -22,6 +22,10 @@ const UserSchema = new mongoose.Schema({
     required: [true, "Name is required"],
     minlength: [2, "Name must be at least 2 characters long"],
   },
+  phoneNumber: {
+    type: String,
+    required: [true, "Phone number is required"],
+  },
   role: {
     type: String,
     enum: ["user", "admin"],
@@ -53,4 +57,4 @@ UserSchema.methods.comparePassword = async function (enteredPassword) {
   }
 };
 
-export default mongoose.models.User || mongoose.model("User", UserSchema);
+export default mongoose?.models?.User || mongoose.model("User", UserSchema);

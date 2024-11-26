@@ -7,7 +7,7 @@ export async function POST(req) {
     await dbConnect();
 
     const body = await req.json();
-    const { name, email, password } = body;
+    const { name, email, password, phoneNumber } = body;
 
     if (!name || !email || !password) {
       return NextResponse.json(
@@ -29,6 +29,7 @@ export async function POST(req) {
       name,
       email,
       password,
+      phoneNumber
     });
 
     return NextResponse.json(

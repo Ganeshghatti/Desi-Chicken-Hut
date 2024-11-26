@@ -1,6 +1,7 @@
 import dbConnect from "@/lib/db";
 import Product from "@/model/Product";
 import { NextResponse } from "next/server";
+import { auth } from "@/app/auth";
 
 // GET all products
 export async function GET(request) {
@@ -28,7 +29,7 @@ export async function GET(request) {
 
 // CREATE new product
 export async function POST(request) {
-  const session = await getServerSession(authOptions);
+  const session = await auth();
   if (!session) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }

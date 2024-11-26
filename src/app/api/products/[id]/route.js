@@ -1,5 +1,6 @@
 import dbConnect from "@/lib/db";
 import Product from "@/model/Product";
+import { auth } from "@/app/auth";
 
 // GET single product
 export async function GET(request, { params }) {
@@ -23,7 +24,7 @@ export async function GET(request, { params }) {
 
 // UPDATE product
 export async function PUT(request, { params }) {
-  const session = await getServerSession(authOptions);
+  const session = await auth();
   if (!session) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
@@ -60,7 +61,7 @@ export async function PUT(request, { params }) {
 
 // DELETE product
 export async function DELETE(request, { params }) {
-  const session = await getServerSession(authOptions);
+  const session = await auth();
   if (!session) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }

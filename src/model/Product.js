@@ -28,10 +28,6 @@ const ProductSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Product category is required']
   },
-  cashOnDelivery: {
-    type: Boolean,
-    default: false
-  },
   discount: {
     type: Number,
     min: [0, 'Discount cannot be negative'],

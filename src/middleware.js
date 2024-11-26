@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { auth } from "./auth";
+import { auth } from "./app/auth";
 
 export default auth((req) => {
   const user = req.auth?.user; 
@@ -18,6 +18,6 @@ export default auth((req) => {
 
 export const config = {
   matcher: [
-    "/dashboard/:path*", 
+    "/dashboard/:path*"
   ],
 };
