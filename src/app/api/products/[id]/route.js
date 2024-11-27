@@ -1,6 +1,7 @@
 import dbConnect from "@/lib/db";
 import Product from "@/model/Product";
 import { auth } from "@/app/auth";
+import { NextResponse } from "next/server";
 
 // GET single product
 export async function GET(request, { params }) {
@@ -8,6 +9,7 @@ export async function GET(request, { params }) {
     await dbConnect();
 
     const product = await Product.findById(params.id);
+
 
     if (!product) {
       return NextResponse.json({ error: "Product not found" }, { status: 404 });

@@ -17,11 +17,6 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please provide a password"],
   },
-  name: {
-    type: String,
-    required: [true, "Name is required"],
-    minlength: [2, "Name must be at least 2 characters long"],
-  },
   phoneNumber: {
     type: String,
     required: [true, "Phone number is required"],

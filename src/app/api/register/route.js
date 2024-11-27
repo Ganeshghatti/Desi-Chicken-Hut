@@ -7,9 +7,9 @@ export async function POST(req) {
     await dbConnect();
 
     const body = await req.json();
-    const { name, email, password, phoneNumber } = body;
+    const { email, password, phoneNumber } = body;
 
-    if (!name || !email || !password) {
+    if (!phoneNumber || !email || !password) {
       return NextResponse.json(
         { error: "Missing required fields" },
         { status: 400 }
@@ -26,7 +26,6 @@ export async function POST(req) {
     }
 
     const newUser = await User.create({
-      name,
       email,
       password,
       phoneNumber
