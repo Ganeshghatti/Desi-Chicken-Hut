@@ -121,17 +121,17 @@ const ProductForm = ({ productId = null }) => {
               placeholder="Enter product name"
             />
           </div>
-
+<Input type="file" name="image" accept="image/*" />
           <div>
             <Label htmlFor="description">Description</Label>
-            <TextEditor
+            {/* <TextEditor
               name="description"
               value={formData.description}
               onChange={handleChange}
               required
               placeholder="Enter product description"
               
-            />
+            /> */}
             <Input
               id="description"
               name="description"

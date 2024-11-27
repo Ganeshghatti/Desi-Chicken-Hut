@@ -1,14 +1,13 @@
 'use client'
 import React, { useEffect } from 'react'
+import { use } from "react";
 import ProductForm from '@/components/dashboard/ProductForm'
 
 const page = ({params}) => {
-    useEffect(() => {
-        console.log(params.id);
-      }, [params.id]);
+  const resolvedParams = use(params);
   return (
     <div>
-      <ProductForm productId={params.id} />
+      <ProductForm productId={resolvedParams.id} />
     </div>
   )
 }
