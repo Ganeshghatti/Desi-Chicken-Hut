@@ -2,6 +2,7 @@ import dbConnect from "@/lib/db";
 import Product from "@/model/Product";
 import { NextResponse } from "next/server";
 import { auth } from "@/app/auth";
+import { generateProductSlug } from "@/lib/helper";
 
 // GET all products
 export async function GET(request) {
@@ -42,6 +43,7 @@ export async function POST(request) {
     // Create new product
     const newProduct = await Product.create({
       ...data,
+      slug: generateProductSlug(data.name),
       createdAt: new Date(),
       updatedAt: new Date(),
     });

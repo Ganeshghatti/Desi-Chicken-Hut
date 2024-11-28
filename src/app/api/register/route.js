@@ -28,7 +28,7 @@ export async function POST(req) {
     const newUser = await User.create({
       email,
       password,
-      phoneNumber
+      phoneNumber,
     });
 
     return NextResponse.json(

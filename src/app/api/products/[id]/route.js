@@ -2,15 +2,14 @@ import dbConnect from "@/lib/db";
 import Product from "@/model/Product";
 import { auth } from "@/app/auth";
 import { NextResponse } from "next/server";
+import { generateProductSlug } from "@/lib/helper";
 
 // GET single product
 export async function GET(request, { params }) {
   try {
     await dbConnect();
 
-    const id = await params.id
-
-    const product = await Product.findById(id);
+    const product = await Product.findById(params.id);
 
 
     if (!product) {
@@ -38,12 +37,11 @@ export async function PUT(request, { params }) {
 
     const data = await request.json();
 
-    const id = await params.id
-
     const updatedProduct = await Product.findByIdAndUpdate(
-      id,
+      params.id,
       {
         ...data,
+        slug: generateProductSlug(data.name),
         updatedAt: new Date(),
       },
       {
@@ -74,9 +72,7 @@ export async function DELETE(request, { params }) {
   try {
     await dbConnect();
 
-    const id = await params.id
-
-    const deletedProduct = await Product.findByIdAndDelete(id);
+    const deletedProduct = await Product.findByIdAndDelete(params.id);
 
     if (!deletedProduct) {
       return NextResponse.json({ error: "Product not found" }, { status: 404 });
