@@ -4,10 +4,10 @@ import { use } from "react";
 import ProductForm from '@/components/dashboard/ProductForm'
 
 const page = ({params}) => {
-  const resolvedParams = use(params);
+  const {id} = use(params);
   return (
     <div>
-      <ProductForm productId={resolvedParams.id} />
+      <ProductForm productId={id} />
     </div>
   )
 }

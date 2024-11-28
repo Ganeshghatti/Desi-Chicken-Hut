@@ -3,12 +3,10 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "../ui/button";
-
 import { HiOutlineDocumentText } from "react-icons/hi2";
-import { FiUsers } from "react-icons/fi";
-import { MdOutlineEmail } from "react-icons/md";
 import { BsGrid } from "react-icons/bs";
 import { IoCloudUploadOutline } from "react-icons/io5";
+import { signOut } from "next-auth/react";
 
 const DashboardSideBar = () => {
   const pathname = usePathname();
@@ -22,22 +20,7 @@ const DashboardSideBar = () => {
       href: "/dashboard/products/create",
       name: "Upload Product",
       icon: IoCloudUploadOutline,
-    },
-    {
-      href: "/dashboard/user",
-      name: "Users",
-      icon: FiUsers,
-    },
-    {
-      href: "/dashboard/category",
-      name: "Categories",
-      icon: BsGrid,
-    },
-    {
-      href: "/dashboard/newsletter",
-      name: "Subscribed",
-      icon: MdOutlineEmail,
-    },
+    }
   ];
 
   return (
@@ -55,7 +38,7 @@ const DashboardSideBar = () => {
                 href={route.href}
                 className={`flex items-center gap-3 p-2 rounded-md text-sm font-medium transition-colors ${
                   pathname === route.href
-                    ? "bg-accent text-accent-foreground"
+                    ? "bg-gray-200 text-accent-foreground"
                     : "hover:bg-accent hover:text-accent-foreground"
                 }`}
               >
@@ -64,7 +47,7 @@ const DashboardSideBar = () => {
               </Link>
             ))}
           </div>
-          <Button>Logout</Button>
+          <Button onClick={() => signOut()} variant="outline"  className="rounded-full border border-red-600 bg-red-600/40  hover:bg-red-600/20 font-bold py-2 ">Logout</Button>
         </div>
       </div>
     </div>

@@ -8,7 +8,9 @@ export async function GET(request, { params }) {
   try {
     await dbConnect();
 
-    const product = await Product.findById(params.id);
+    const id = await params.id
+
+    const product = await Product.findById(id);
 
 
     if (!product) {
@@ -36,8 +38,10 @@ export async function PUT(request, { params }) {
 
     const data = await request.json();
 
+    const id = await params.id
+
     const updatedProduct = await Product.findByIdAndUpdate(
-      params.id,
+      id,
       {
         ...data,
         updatedAt: new Date(),
@@ -70,7 +74,9 @@ export async function DELETE(request, { params }) {
   try {
     await dbConnect();
 
-    const deletedProduct = await Product.findByIdAndDelete(params.id);
+    const id = await params.id
+
+    const deletedProduct = await Product.findByIdAndDelete(id);
 
     if (!deletedProduct) {
       return NextResponse.json({ error: "Product not found" }, { status: 404 });

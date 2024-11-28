@@ -1,6 +1,7 @@
 import Order from "@/model/Order";
 import dbConnect from "@/lib/db";
 import { NextResponse } from "next/server";
+import { auth } from "@/app/auth";
 
 // GET all orders
 export async function GET(request) {
@@ -26,7 +27,7 @@ export async function GET(request) {
 
 // CREATE new order
 export async function POST(request) {
-  const session = await getServerSession(authOptions);
+  const session = await auth();
   if (!session) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }

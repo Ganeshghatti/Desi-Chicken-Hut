@@ -1,11 +1,11 @@
 //JSX code 
 'use client'
-import React, { lazy, Suspense } from "react";
-import { ReactQuillProps } from "react-quill";
-import "react-quill/dist/quill.snow.css";
+import React, { Suspense } from "react";
+// import ReactQuill from 'react-quill-new';
+import 'react-quill-new/dist/quill.snow.css';
 import dynamic from "next/dynamic";
 
-const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
+const ReactQuill = dynamic(() => import("react-quill-new"), { ssr: false });
 
 const modules = {
   toolbar: [

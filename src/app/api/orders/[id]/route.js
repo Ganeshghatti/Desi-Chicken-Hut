@@ -1,9 +1,10 @@
 import dbConnect from "@/lib/db";
 import Order from "@/model/Order";
 import { NextResponse } from "next/server";
+import { auth } from "@/app/auth";
 
 export async function GET(request, { params }) {
-  const { id } = params;
+  const { id } = await params;
 
   try {
     await dbConnect();

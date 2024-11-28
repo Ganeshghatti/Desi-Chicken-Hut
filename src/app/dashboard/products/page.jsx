@@ -25,7 +25,8 @@ import {
   DialogFooter 
 } from '@/components/ui/dialog';
 import { toast } from 'sonner';
-
+import Link from 'next/link';
+import { Loader2 } from "lucide-react"
 import { MoreHorizontal, Edit, Trash2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
@@ -84,25 +85,26 @@ const page = () => {
   // Render loading state
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center h-full p-4">
-        Loading products...
+      <div className="flex justify-center items-center h-dvh w-full">
+          <Loader2 className="animate-spin w-10 h-10" />
       </div>
     );
   }
 
   return (
-    <div className="p-4">
+    <div className="mt-10">
       <div className="flex justify-between items-center mb-4">
-        <h1 className="text-2xl font-bold">Product Management</h1>
+        <h1 className="text-2xl font-bold ">Product Management</h1>
+        <Link href={"/dashboard/products/create"}>
         <Button onClick={() => {
           setSelectedProduct(null);
-          setIsEditModalOpen(true);
         }}>
           Create New Product
         </Button>
+        </Link>
       </div>
 
-      <Table>
+      <Table className="mt-4">
         <TableHeader>
           <TableRow>
             <TableHead>Name</TableHead>

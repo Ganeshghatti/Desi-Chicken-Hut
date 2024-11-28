@@ -24,10 +24,6 @@ const ProductSchema = new mongoose.Schema({
     min: [0, 'Quantity cannot be negative'],
     default: 0
   },
-  category: {
-    type: String,
-    required: [true, 'Product category is required']
-  },
   discount: {
     type: Number,
     min: [0, 'Discount cannot be negative'],
