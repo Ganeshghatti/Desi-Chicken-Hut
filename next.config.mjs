@@ -5,6 +5,10 @@ const nextConfig = {
     // Add font optimization if necessary
     experimental: {
         optimizeFonts: true,
+
+    },
+    images: {
+        domains: ['firebasestorage.googleapis.com'],
     },
 };
 
