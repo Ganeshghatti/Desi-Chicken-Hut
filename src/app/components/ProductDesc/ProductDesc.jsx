@@ -2,100 +2,94 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import ProductImage from "../../assets/ProductDesc/Productimg.png";
 import "./ProductDesc.css";
 import cartIcon from "../../assets/ProductDesc/cart.svg";
 import favIcon from "../../assets/ProductDesc/fav.svg";
 import favRed from "../../assets/ProductDesc/favred.svg";
 
-const ProductDesc = () => {
+const ProductDesc = ({ product }) => {
   const [selectedSize, setSelectedSize] = useState(0);
+  const [isFavorite, setIsFavorite] = useState(false);
 
-  const data = {
-    category: "DAIRY & EGGS",
-    discount: "10% OFF",
-    image: ProductImage,
-    title: "Farm-Fresh Eggs:\nPerfect Protein",
-    description:
-      "Experience the taste of premium-quality, farm-fresh eggs. Rich in flavor, packed with protein, and versatile for any meal, our eggs are perfect for cooking, baking, or enjoying on their own.",
-    specs: [
-      "Energy value per 100g: 381 kcal",
-      "Net weight: 200g",
-      "Expiration date: 48 days",
-    ],
-    size: {
-      text: "Size, kg",
-      options: [2.0, 1.2, 0.4, 0.19],
-    },
-    prices: {
-      2.0: "$3.10",
-      1.2: "$1.86",
-      0.4: "$0.62",
-      0.19: "$0.29",
-    },
+  // This line gets the first product from the products array if it exists,
+  // otherwise falls back to a default empty product object
+  const data = product?.products?.[0] || {
+    name: "",
+    description: "",
+    price: 0,
+    image: "/",
+    quantity: 0,
+    discount: 0,
   };
+
+  const categories = ["Fresh", "Organic", "Farm"];
+  const sizes = [2.0, 1.2, 0.4, 0.19];
 
   return (
     <section
-      className="w-full flex justify-center items-center py-[100px] min-h-[calc(100vh-200px)] px-[15px] lg:px-0"
+      className="w-full flex justify-center items-center py-[50px] md:py-[75px] lg:py-[100px] min-h-[calc(100vh-200px)] px-[15px] lg:px-0"
       style={{
         background:
           "linear-gradient(90deg, rgba(155, 202, 228, 0.05) 0%, rgba(238, 143, 52, 0.05) 53%, rgba(245, 138, 37, 0.05) 100%, rgba(165, 156, 148, 0.05) 100%)",
       }}
     >
-      <div className="flex flex-col lg:flex-row w-full lg:w-fit bg-white rounded-[12px]">
-        <div className="w-[calc(100%+30px)] -ml-[15px] lg:ml-0 lg:w-[620px] h-[300px] lg:h-[598px] overflow-hidden lg:rounded-[12px]">
+      <div className="flex flex-col lg:flex-row w-full lg:w-fit bg-white rounded-[12px] max-w-[1156px]">
+        <div className="w-full lg:w-[620px] h-[300px] md:h-[450px] lg:h-[598px] relative overflow-hidden lg:rounded-l-[12px]">
           <Image
             src={data.image}
-            alt="product"
-            className="w-full h-full object-cover"
+            alt={data.name}
+            fill
+            className="object-cover"
+            priority
           />
         </div>
 
-        <div className="w-full lg:w-[536px] p-6 lg:p-[40px] flex flex-col justify-center bg-white lg:rounded-r-[12px]">
-          <div className="flex gap-[10px] mb-[25px]">
-            {[data.category, data.discount].map((badge, idx) => (
+        <div className="w-full lg:w-[536px] p-4 md:p-6 lg:p-[40px] flex flex-col justify-center bg-white lg:rounded-r-[12px]">
+          {/* Categories */}
+          <div className="flex flex-wrap gap-[10px] mb-[25px]">
+            {categories.map((category, index) => (
               <span
-                key={idx}
-                className="px-[16px] py-[8px] rounded-[20px] bg-[#D30000] text-white text-[12px]"
+                key={index}
+                className="px-[16px] py-[8px] rounded-[20px] bg-[#F6F3F1] text-[#777E90] text-[12px] whitespace-nowrap"
               >
-                {badge}
+                {category}
               </span>
             ))}
+            <span className="px-[16px] py-[8px] rounded-[20px] bg-[#D30000] text-white text-[12px] whitespace-nowrap">
+              {data.discount}% OFF
+            </span>
           </div>
 
-          <h2 className="text-2xl lg:text-[40px] font-normal mb-[25px] whitespace-pre-line leading-[1.2]">
-            {data.title}
+          {/* Title */}
+          <h2 className="text-xl md:text-2xl lg:text-[40px] font-normal mb-[25px] leading-[1.2]">
+            {data.name}
           </h2>
 
+          {/* Description */}
           <p className="text-sm lg:text-[14px] font-light text-[#666666] mb-[25px] leading-[1.5]">
             {data.description}
           </p>
 
+          {/* Specs */}
           <div className="mb-[25px] text-sm lg:text-[13px] font-bold text-[#666666]">
-            {data.specs.map((spec, idx) => (
-              <p
-                key={idx}
-                className={idx !== data.specs.length - 1 ? "mb-[10px]" : ""}
-              >
-                {spec}
-              </p>
-            ))}
+            <p className="mb-[10px]">
+              Quantity available: {data.quantity} units
+            </p>
+            <p className="mb-[10px]">Farm-fresh quality</p>
+            <p>Premium selection</p>
           </div>
 
-          <div className="mb-[25px]">
-            <p className="text-[13px] text-[#777E90]">{data.size.text}</p>
-            <div className="flex gap-[10px]">
-              {data.size.options.map((size, idx) => (
+          {/* Size Selector */}
+          <div className="size-block mb-[25px]">
+            <p className="text-sm text-[#777E90] mb-[10px]">Size, kg</p>
+            <div className="flex flex-wrap gap-[10px]">
+              {sizes.map((size, index) => (
                 <button
-                  key={idx}
-                  onClick={() => setSelectedSize(idx)}
-                  className={`w-[41px] h-[23px] rounded-[12px] text-[13px] flex items-center justify-center
-                    ${
-                      idx === selectedSize
-                        ? "bg-[#777E90] text-white"
-                        : "bg-[#F6F3F1] text-[#777E90]"
-                    }`}
+                  key={index}
+                  className={`size-btn ${
+                    selectedSize === index ? "active" : ""
+                  }`}
+                  onClick={() => setSelectedSize(index)}
                 >
                   {size}
                 </button>
@@ -103,31 +97,31 @@ const ProductDesc = () => {
             </div>
           </div>
 
-          <div className="flex items-center gap-[15px]">
-            <div className="w-[80px]">
-              <span className="text-xl lg:text-[24px] font-bold">
-                {data.prices[data.size.options[selectedSize]]}
-              </span>
-            </div>
-            <button
-              className="px-[20px] py-[10px] border-[3px] border-[#D30000] text-[#D30000] rounded-[25px] flex items-center gap-[8px] 
-              hover:bg-[#D30000] hover:text-white transition-colors duration-300 group"
-            >
-              Add to cart
+          {/* Action Buttons */}
+          <div className="flex flex-wrap items-center gap-[15px]">
+            <span className="text-[20px] md:text-[24px] font-bold">
+              ${data.price}
+            </span>
+            <button className="flex items-center gap-[10px] py-[8px] md:py-[10px] px-[15px] md:px-[20px] border-[3px] border-[#D30000] bg-[#D30000] text-white rounded-[25px] hover:bg-white hover:text-[#D30000] group transition-colors duration-300 text-sm md:text-base">
+              Add to Cart
               <Image
                 src={cartIcon}
                 alt="cart"
-                className="w-[20px] h-[20px] group-hover:brightness-0 group-hover:invert transition-all duration-300"
+                width={20}
+                height={20}
+                className="w-5 h-5 md:w-6 md:h-6 brightness-0 invert group-hover:brightness-100 group-hover:invert-0"
               />
             </button>
             <button
-              className="w-[40px] h-[40px] rounded-full bg-[#D30000] flex items-center justify-center 
-              hover:bg-white hover:border-[3px] hover:border-[#D30000] transition-all duration-300 group"
+              className="w-[40px] h-[40px] md:w-[48px] md:h-[48px] flex items-center justify-center border-[3px] border-[#D30000] rounded-full hover:bg-[#D30000] group transition-colors duration-300"
+              onClick={() => setIsFavorite(!isFavorite)}
             >
               <Image
                 src={favRed}
                 alt="favorite"
-                className="w-[20px] h-[20px] brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-300"
+                width={20}
+                height={20}
+                className="w-5 h-5 md:w-6 md:h-6 group-hover:brightness-0 group-hover:invert"
               />
             </button>
           </div>
