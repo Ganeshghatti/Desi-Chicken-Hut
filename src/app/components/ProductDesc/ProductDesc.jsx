@@ -11,8 +11,6 @@ const ProductDesc = ({ product }) => {
   const [selectedSize, setSelectedSize] = useState(0);
   const [isFavorite, setIsFavorite] = useState(false);
 
-  // This line gets the first product from the products array if it exists,
-  // otherwise falls back to a default empty product object
   const data = product?.products?.[0] || {
     name: "",
     description: "",
